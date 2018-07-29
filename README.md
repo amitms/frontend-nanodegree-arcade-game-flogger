@@ -7,7 +7,7 @@ Frogger is a classic arcade game. Objective of the game is to get player reach w
 
 javascript app.js and index.html is modified and rest of css engine.js, resources.js are left intact as per requirement.
 
-[![preview](./images/preview.JPG)](http://amitms.github.io/frontend-nanodegree-arcade-game-flogger/)
+[![preview](./images/preview.JPG)](https://amitms.github.io/frontend-nanodegree-arcade-game-flogger_publish/)
 
 
 ## 2. Installation and run:
