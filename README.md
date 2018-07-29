@@ -22,7 +22,7 @@ To play the game, simple move the player with arrow keys (up/down/left/right). c
 
 
 ## 4. Games features 
-*checkCollisions:
+* checkCollisions:
 
 collision detection is done if player is within 25px of an enemy (x or y axis) and reset the game if true
 
@@ -34,5 +34,5 @@ code:
         player.x = 200;
         player.y = 380;
  ```
-*alert:
+* alert:
 background changes to red when collided.
