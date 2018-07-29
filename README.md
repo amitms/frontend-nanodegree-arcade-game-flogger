@@ -1,6 +1,38 @@
-frontend-nanodegree-arcade-game
-===============================
+Frogger: frontend-nanodegree-arcade-game 
+==================================================================================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## 1. Introduction:
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+Frogger is a classic arcade game. Objective of the game is to get player reach water accross by avoiding obstables (enemies). once player gets accross score of 10 received. highscore is recorded and can be cleared by reset. It is built with object-orientated Javascipt in order to fulfill part of Udacity's front end nano-degree program.
+
+javascript app.js and index.html is modified and rest of css engine.js, resources.js are left intact as per requirement.
+
+[![demo](./images/preview.jpg)](http://amitms.github.io/frontend-nanodegree-arcade-game-flogger/)
+
+
+## 2. Installation and run:
+
+* Offline installation: 
+For offline gameplay, all files must be cloned or downloaded from https://github.com/amitms/frontend-nanodegree-arcade-game-flogger .
+
+Open 'index.html' in your browser and start the game.
+
+## Instructions(how to play)
+To play the game, simple move the player with arrow keys (up/down/left/right). click reset button to clear scores and player locatyon. 
+
+
+## Games features 
+#checkCollisions:
+
+collision detection is done if player is within 25px of an enemy (x or y axis) and reset the game if true
+
+code:
+ >if (player.x < this.x + 25 &&
+ >       player.x + 25 > this.x &&
+ >       player.y < this.y + 25 &&
+ >       25 + player.y > this.y) {
+ >       player.x = 200;
+ >       player.y = 380;
+
+#alert:
+background changes to red when collided.
