@@ -7,7 +7,7 @@ Frogger is a classic arcade game. Objective of the game is to get player reach w
 
 javascript app.js and index.html is modified and rest of css engine.js, resources.js are left intact as per requirement.
 
-[![demo](./images/preview.jpg)](http://amitms.github.io/frontend-nanodegree-arcade-game-flogger/)
+[![preview](./images/preview.jpg)](http://amitms.github.io/frontend-nanodegree-arcade-game-flogger/)
 
 
 ## 2. Installation and run:
@@ -17,22 +17,22 @@ For offline gameplay, all files must be cloned or downloaded from https://github
 
 Open 'index.html' in your browser and start the game.
 
-## Instructions(how to play)
+## 3. Instructions(how to play)
 To play the game, simple move the player with arrow keys (up/down/left/right). click reset button to clear scores and player locatyon. 
 
 
-## Games features 
-#checkCollisions:
+## 4. Games features 
+###checkCollisions:
 
 collision detection is done if player is within 25px of an enemy (x or y axis) and reset the game if true
 
 code:
- >if (player.x < this.x + 25 &&
- >       player.x + 25 > this.x &&
- >       player.y < this.y + 25 &&
- >       25 + player.y > this.y) {
- >       player.x = 200;
- >       player.y = 380;
-
-#alert:
+ ```if (player.x < this.x + 25 &&
+        player.x + 25 > this.x &&
+        player.y < this.y + 25 &&
+        25 + player.y > this.y) {
+        player.x = 200;
+        player.y = 380;
+ ```
+###alert:
 background changes to red when collided.
