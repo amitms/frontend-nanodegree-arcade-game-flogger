@@ -1,3 +1,14 @@
+/**********global variables*/
+var score = 0;
+var highScore = 0;
+var div = document.getElementById('score-board');
+var divHighScore = document.getElementById('high-score');
+var divReset = document.getElementById('reset');
+
+document.querySelector('body').style.backgroundColor = 'DeepSkyBlue';
+
+/*********************/
+
 // Enemies our player must avoid
 var Enemy = function(x,y){
     // Variables applied to each of our instances go here,
@@ -6,9 +17,9 @@ var Enemy = function(x,y){
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
   this.sprite = 'images/enemy-bug.png';
-  this.x = x;
-  this.y = y;
-  this.speed = Math.ceil((Math.random() * 200) + (Math.random() * 100) + (Math.random() * 50));
+    this.x = x;
+    this.y = y;
+    this.speed = Math.ceil((Math.random() * 200) + (Math.random() * 100) + (Math.random() * 50));
 };
 
 // Update the enemy's position, required method for game
@@ -30,6 +41,14 @@ Enemy.prototype.update = function(dt) {
         25 + player.y > this.y) {
         player.x = 200;
         player.y = 380;
+        //changing background color for warning when collided
+        document.querySelector('body').style.backgroundColor = 'red';
+        setTimeout(function () {
+            document.querySelector('body').style.backgroundColor = 'DeepSkyBlue';
+        }, 200);
+        //score reset /
+        score = 0;
+        div.innerHTML = `You Scored: ${score}`;
     }
 };
 
@@ -63,6 +82,14 @@ Player.prototype.update = function(x,y){
     if(this.y <-50){           //on the water then reset position
         this.x = 200;
         this.y = 380;
+        score += 10;
+        /**calculating scores  and reset*/
+        if(score > highScore){
+            highScore = score};
+        div.innerHTML = `You Scored: ${score}`;
+        divHighScore.innerHTML = `Highest Score: ${highScore}`;
+        divReset.innerHTML = `<button class="btn reset-btn">Reset</button>`;        
+        /*****************/
     }
 
 };
@@ -115,3 +142,14 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+//reset scores and position of player
+divReset.addEventListener('click', function(){ 
+    score = 0;
+    highScore = 0;
+    player.x = 200;
+    player.y = 380;
+    div.innerHTML = `You Scored: ${score}`;
+    divHighScore.innerHTML = `Highest Score: ${highScore}`;
+    });             
+  
